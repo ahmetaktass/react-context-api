@@ -7,9 +7,9 @@ function App() {
   return (
     <SiteProvider>
       <h1>REACT CONTEXT APİ TUTORİAL</h1>
-     
+
       <Header />
-      <h1>App</h1>
+      <h1>App1</h1>
       <Footer />
     </SiteProvider>
   )
