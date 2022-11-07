@@ -5,9 +5,9 @@ import { SwichTheme } from './SwichTheme'
 export default function Footer() {
   return (
     <footer>
-      Footer
+      <h1>Footer</h1>
       <SwichTheme />
-      <SwichLanguage />
+      {/* <SwichLanguage /> */}
     </footer>
   )
 }

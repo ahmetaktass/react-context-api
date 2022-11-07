@@ -1,15 +1,28 @@
 import React from 'react'
-import { useContext } from 'react'
-import SiteContext, { Context } from '../context/SiteContext'
+import { useContext, useEffect } from 'react'
+import { Context } from '../context/SiteContext'
+import { MdLightMode, MdModeNight } from 'react-icons/md'
 
 export const SwichTheme = () => {
   const { theme, setTheme } = useContext(Context)
+  const handleClick = () => {
+    console.log('theme')
+    setTheme(theme === 'light' ? 'dark' : 'light')
+  }
+  useEffect(() => {
+    console.log('theme', theme)
+    document.body.className = theme
+  })
   return (
     <>
-      Mevcut Tema = {theme} <br />
-      <button onClick={() => setTheme(theme === 'light' ? 'dark' : 'light')}>
-        Temayı Değiştir
-      </button>
+      {/* Theme = {theme} <br /> */}
+      <span onClick={handleClick}>
+        {theme === 'light' ? (
+          <MdLightMode className="toggle" />
+        ) : (
+          <MdModeNight className="toggle" />
+        )}
+      </span>
     </>
   )
 }
